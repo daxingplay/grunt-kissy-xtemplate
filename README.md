@@ -25,4 +25,4 @@ xtemplate: {
 }
 ```
 
-Note that you must specify the KISSY version in your config. Otherwise, KISSY XTemplate will use the latest version instead.
+Note that you must specify the KISSY ``version`` in your options. Otherwise, KISSY XTemplate will use the latest version instead.
