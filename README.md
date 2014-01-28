@@ -5,7 +5,7 @@ grunt-kissy-xtemplate
 
 grunt plugin for [KISSY XTemplate](https://github.com/daxingplay/kissy-xtemplate).
 
-If you have any questions, please submit an issue or contact me at [Laiwang](www.laiwang.com)(my ID is daxingplay).
+If you have any questions, please submit an issue or contact me at [Laiwang](http://www.laiwang.com)(my ID is daxingplay).
 
 The usage is quite simple:
 
