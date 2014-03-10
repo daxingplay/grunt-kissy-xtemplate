@@ -22,9 +22,7 @@ module.exports = function (grunt) {
         // Merge task-specific and/or target-specific options with these defaults.
         var options = this.options();
 
-        var xtemp = new Xtemplate({
-            version: options.version
-        });
+        var xtemp = new Xtemplate(options);
 
         this.files.forEach(function (f) {
             f.src.forEach(function(src){

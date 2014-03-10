@@ -14,7 +14,9 @@ configure your tasks like this:
 ```
 xtemplate: {
     options: {
-        version: '1.4.1'
+        version: '1.4.1',
+        inputCharset: 'gbk',
+        outputCharset: 'gbk'
     },
     main: {
         files: [{
