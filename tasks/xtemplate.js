@@ -11,7 +11,8 @@
 var Xtemplate = require('kissy-xtemplate'),
 	fs = require('fs'),
     path = require('path'),
-    os = require('os');
+    os = require('os'),
+    chalk = require('chalk');
 
 module.exports = function (grunt) {
 
@@ -25,7 +26,21 @@ module.exports = function (grunt) {
         var xtemp = new Xtemplate(options);
 
         this.files.forEach(function (f) {
-            f.src.forEach(function(src){
+            var src = f.src.filter(function(filepath) {
+                // Warn on and remove invalid source files (if nonull was set).
+                if (!grunt.file.exists(filepath)) {
+                    grunt.log.warn('Source file ' + chalk.cyan(filepath) + ' not found.');
+                    return false;
+                } else {
+                    return true;
+                }
+            });
+
+            if (src.length === 0) {
+                grunt.log.warn('Destination ' + chalk.cyan(f.dest) + ' not written because src files were empty.');
+                return;
+            }
+            src.forEach(function(src){
                 xtemp.compileSync(src, f.dest);
 //                grunt.log.ok('compiled ' + src + ' ===> ' + f.dest + ' successfully.');
             });
